@@ -133,7 +133,7 @@ configuration-space obstacles \cite[Ch.~4]{lavalle2006}. A candidate RRT edge is
 segment against occupied cell boxes using slab intervals. This rejects a
 crossing even when neither edge endpoint lies inside the obstacle. A separate,
 less conservative physical envelope uses $r_d+0.15=0.55$~m; entry into this
-region or a Gazebo contact aborts execution.
+region or a Gazebo contact terminates execution.
 
 \section{Planning and Continuous Trajectory Generation}
 
@@ -223,8 +223,8 @@ route estimate
  L=\sqrt{L_{xy}^{2}+(z_d-z_0)^2}.
  \label{eq:spatiallength}
 \end{equation}
-The following feasibility rule is an empirical design result from preliminary
-Gazebo trials, rather than a bound taken from the literature:
+The following feasibility rule is an empirical design criterion for the
+simulated vehicle, rather than a bound taken from the literature:
 \begin{equation}
  T\geq T_{min}=2L,
  \label{eq:mintime}
@@ -291,9 +291,9 @@ velocity commands are set to zero and success is determined once, using
  \label{eq:success}
 \end{equation}
 No additional settling interval is appended. A goal outside these limits is
-reported as aborted rather than as a successful timeout. During execution, a
-stale pose, excessive roll or pitch, map-envelope violation, or Gazebo contact
-also terminates the action safely.
+classified as unsuccessful. During execution, a stale pose, excessive roll or
+pitch, map-envelope violation, or Gazebo contact also terminates the action
+safely.
 
 \section{Experimental Method}
 
@@ -307,13 +307,17 @@ Gazebo scheduling overhead. A fixed seed of 22 was used for the reported trial.
 The action command requested a flight from approximately
 $(0,0,2)$~m to $(6,0,2)$~m at zero yaw in 26~s. The direct path intersects the
 central wall, so successful completion requires a planned detour.
+All quantities in Table~\ref{tab:results} and Figs.~\ref{fig:trajectory}--
+\ref{fig:speed} correspond exclusively to this same outbound flight. Its
+\texttt{results.json} file supplies the raw and smoothed planned paths in
+Fig.~\ref{fig:trajectory}; the matching 2275-sample \texttt{flight.csv} supplies
+the measured trajectory in Fig.~\ref{fig:trajectory}, the component errors in
+Fig.~\ref{fig:errors}, and the reference and measured speeds in
+Fig.~\ref{fig:speed}.
 
-The validation sequence also included: (i) rejection of a 1-s infeasible goal,
-for which the computed 11.742-m route required at least 23.483~s; (ii) an 8-s
-vertical maneuver; (iii) the reported outbound detour; and (iv) a second
-26-s return goal without restarting the simulator. Gazebo reported zero contacts
-during the successful detour trials. In addition, 13 unit tests exercised map
-loading, collision checking, planning, smoothing, and trajectory utilities.
+Gazebo reported zero contacts during the reported flight. In addition, 13 unit
+tests exercised map loading, collision checking, planning, smoothing, and
+trajectory utilities.
 
 The CSV did not record a separate \texttt{/clock} timestamp. Consequently, all
 duration values and the time axes in this paper are monotonic wall-clock
