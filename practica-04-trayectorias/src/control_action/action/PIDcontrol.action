@@ -1,0 +1,12 @@
+float64 xd
+float64 yd
+float64 zd
+float64 wd
+float64 tf
+---
+string result
+---
+float64 err_x
+float64 err_y
+float64 err_z
+float64 err_w

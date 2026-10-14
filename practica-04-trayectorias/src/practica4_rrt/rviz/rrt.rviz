@@ -1,0 +1,38 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Global Options:
+    Fixed Frame: world
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: Inflated occupancy
+      Enabled: true
+      Topic:
+        Value: /rrt_map
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Depth: 1
+    - Class: rviz_default_plugins/Path
+      Name: Raw RRT
+      Enabled: true
+      Color: 255; 128; 0
+      Topic:
+        Value: /rrt/path_raw
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Depth: 1
+    - Class: rviz_default_plugins/Path
+      Name: Smoothed path
+      Enabled: true
+      Color: 0; 100; 255
+      Topic:
+        Value: /rrt/path_smoothed
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Depth: 1
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Scale: 40
+      Target Frame: world

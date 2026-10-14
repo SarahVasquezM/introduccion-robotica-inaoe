@@ -1,0 +1,8 @@
+bounds: [-8.0, 8.0, -8.0, 8.0] # xmin, xmax, ymin, ymax
+resolution: 0.1
+drone_radius: 0.4
+margin: 0.50
+obstacles: # centers and full sizes in metres
+  - {name: wall_middle, x: 3.0, y: 0.0, width: 1.0, depth: 6.0, height: 5.0}
+  - {name: block_left, x: -3.0, y: 2.0, width: 2.0, depth: 2.0, height: 5.0}
+  - {name: block_lower, x: -2.0, y: -4.0, width: 2.0, depth: 1.5, height: 5.0}

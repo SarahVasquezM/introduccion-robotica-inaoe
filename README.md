@@ -11,7 +11,7 @@ Las prácticas utilizan ROS 2 Humble y Gazebo para simular un cuadrotor. Se trab
 | [Práctica 1](practica-01-gazebo/README.md) | Preparación de Gazebo, mundo de simulación y familiarización con el dron. |
 | [Práctica 2](practica-02-control-pid/README.md) | Control PID de posición y yaw mediante una acción de ROS 2. |
 | [Práctica 3](practica-03-seguimiento-yolo/README.md) | Detección y seguimiento de una persona con YOLO y una máquina de estados. |
-| [Práctica 4](practica-04-trayectorias/README.md) | Generación de trayectorias cúbicas con un tiempo deseado de llegada. |
+| [Práctica 4](practica-04-trayectorias/README.md) | Planeación RRT, suavizado y seguimiento continuo en tiempo deseado. |
 
 ## Organización
 
