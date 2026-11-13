@@ -1,0 +1,63 @@
+autominy_pure_pursuit:
+  ros__parameters:
+    odom_topic: /sensors/odom
+    steering_feedback_topic: /sensors/steering
+
+    # Preferred goal interface:
+    goal_pose_topic: /practica5/goal_pose
+
+    # Legacy position-only interface:
+    goal_point_topic: /practica5/goal_point
+
+    speed_topic: /actuators/speed_normalized
+    steering_topic: /actuators/steering_normalized
+
+    wheelbase: 0.25
+    max_left_steering_angle_rad: 0.512
+    max_right_steering_angle_rad: 0.498
+
+    # Hard normalized speed limit.
+    max_speed: 0.25
+    cruise_speed: 0.12
+    min_speed: 0.05
+    max_reverse_speed: 0.10
+
+    max_steering_normalized: 0.80
+
+    speed_sign: 1.0
+    steering_sign: 1.0
+
+    steering_feedback_enabled: true
+    steering_feedback_sign: 1.0
+    steering_feedback_kp: 0.70
+    steering_feedback_deadband_rad: 0.008
+    steering_feedback_timeout: 0.30
+    positive_steering_ff_gain: 1.0
+    negative_steering_ff_gain: 1.0
+    steering_command_rate_limit: 2.5
+
+    allow_reverse: true
+    reverse_activation_x: -0.10
+    reverse_min_goal_distance: 0.25
+
+    path_resolution: 0.02
+    bezier_tangent_ratio: 0.35
+    bezier_min_tangent: 0.25
+    bezier_max_tangent: 0.80
+
+    lookahead: 0.25
+
+    # Goal is reached only when BOTH are satisfied for goal_pose.
+    position_tolerance: 0.08
+    yaw_tolerance_rad: 0.1745329252   # 10 degrees
+
+    slow_radius: 0.55
+    curvature_speed_gain: 0.70
+    minimum_curve_speed_factor: 0.35
+
+    progress_timeout: 5.0
+    progress_index_step: 2
+    progress_distance_epsilon: 0.02
+
+    odom_timeout: 0.50
+    control_rate_hz: 20.0

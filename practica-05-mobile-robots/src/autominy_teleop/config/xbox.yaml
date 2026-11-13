@@ -1,0 +1,20 @@
+xbox_teleop:
+  ros__parameters:
+
+    speed_axis: 1
+    steering_axis: 0
+
+    enable_button: 0
+
+    speed_scale: 0.25
+    steering_scale: 0.35
+
+    speed_sign: 1.0
+    steering_sign: 1.0
+
+    deadzone: 0.08
+    joy_timeout: 0.50
+
+    joy_topic: /joy
+    speed_topic: /actuators/speed_normalized
+    steering_topic: /actuators/steering_normalized

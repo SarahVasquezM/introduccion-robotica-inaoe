@@ -1,0 +1,22 @@
+autominy_metrics:
+  ros__parameters:
+    output_dir: ~/autominy_metrics
+
+    goal_pose_topic: /practica5/goal_pose
+    goal_point_topic: /practica5/goal_point
+    pose_topic: /practica5/local_pose
+    path_topic: /practica5/path
+
+    desired_steering_topic: /practica5/desired_steering_angle
+    measured_steering_topic: /sensors/steering
+
+    steering_command_topic: /practica5/steering_command_normalized
+    actuator_steering_topic: /actuators/steering_normalized
+    actuator_speed_topic: /actuators/speed_normalized
+
+    curvature_topic: /practica5/curvature
+    steer_saturated_topic: /practica5/steer_saturated
+    drive_direction_topic: /practica5/drive_direction
+
+    goal_reached_topic: /practica5/goal_reached
+    goal_blocked_topic: /practica5/goal_blocked
